@@ -11,8 +11,8 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
-	"svg2icon/internal/icns"
-	"svg2icon/internal/ico"
+	"github.com/Julian-Bruyers/svg2icon/internal/icns"
+	"github.com/Julian-Bruyers/svg2icon/internal/ico"
 )
 
 type PathType int
