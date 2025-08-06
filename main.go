@@ -3,7 +3,8 @@
 // svg2icon converts SVG files to ICO and ICNS icon formats for Windows and macOS respectively.
 //
 // Usage:
-//   svg2icon <input.svg> <output>
+//
+//	svg2icon <input.svg> <output>
 //
 // The tool generates platform-specific icon files:
 //   - ICO files with standard Windows icon sizes (16x16 to 256x256)

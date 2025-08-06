@@ -7,12 +7,12 @@ package svg2icon
 import (
 	"errors"
 	"fmt"
+	"github.com/julian-bruyers/svg2icon/internal/icns"
+	"github.com/julian-bruyers/svg2icon/internal/ico"
 	"io"
 	"os"
 	"path/filepath"
 	"strings"
-	"github.com/julian-bruyers/svg2icon/internal/icns"
-	"github.com/julian-bruyers/svg2icon/internal/ico"
 )
 
 type PathType int

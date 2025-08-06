@@ -7,8 +7,8 @@ package ico
 import (
 	"bytes"
 	"encoding/binary"
-	"os"
 	"github.com/julian-bruyers/svg2icon/internal/png"
+	"os"
 )
 
 // The sizes used in Windows for .ico files
