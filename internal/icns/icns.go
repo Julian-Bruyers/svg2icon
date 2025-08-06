@@ -8,7 +8,7 @@ import (
 	"bytes"
 	"encoding/binary"
 	"os"
-	"github.com/Julian-Bruyers/svg2icon/internal/png"
+	"github.com/julian-bruyers/svg2icon/internal/png"
 )
 
 // StandardIconTypes defines the set of icons to be included in the .icns file.

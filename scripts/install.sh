@@ -1,11 +1,12 @@
 #!/bin/bash
-# svg2icon Installation Script for Unix/Linux/macOS
+# svg2icon installer script for Unix/Linux/macOS
 # Downloads and installs the latest release from GitHub
-# Usage: curl -sSL https://raw.githubusercontent.com/Julian-Bruyers/svg2icon/main/scripts/install.sh | bash
+#
+# Usage: curl -sSL https://raw.githubusercontent.com/julian-bruyers/svg2icon/main/scripts/install.sh | bash
 
 set -e
 
-REPO="Julian-Bruyers/svg2icon"
+REPO="julian-bruyers/svg2icon"
 INSTALL_DIR="/usr/local/bin"
 BINARY_NAME="svg2icon"
 

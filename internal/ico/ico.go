@@ -8,7 +8,7 @@ import (
 	"bytes"
 	"encoding/binary"
 	"os"
-	"github.com/Julian-Bruyers/svg2icon/internal/png"
+	"github.com/julian-bruyers/svg2icon/internal/png"
 )
 
 // The sizes used in Windows for .ico files

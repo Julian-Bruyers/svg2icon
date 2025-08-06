@@ -1,4 +1,6 @@
-# svg2icon Installation Script for Windows PowerShell
+# svg2icon installer script for Windows PowerShell
+# Downloads and installs the latest release from GitHub
+# Usage: iwr -useb https://raw.githubusercontent.com/julian-bruyers/svg2icon/main/scripts/install.ps1 | iexvg2icon Installation Script for Windows PowerShell
 # Downloads and installs the latest release from GitHub
 # Usage: iwr -useb https://raw.githubusercontent.com/Julian-Bruyers/svg2icon/main/scripts/install.ps1 | iex
 
@@ -9,7 +11,7 @@ param(
 )
 
 # Configuration
-$Repo = "Julian-Bruyers/svg2icon"
+$Repo = "julian-bruyers/svg2icon"
 $BinaryName = "svg2icon.exe"
 $DefaultInstallDir = "$env:LOCALAPPDATA\svg2icon"
 

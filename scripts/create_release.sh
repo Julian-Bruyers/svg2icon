@@ -5,7 +5,7 @@
 
 set -e
 
-REPO_OWNER="Julian-Bruyers"
+REPO_OWNER="julian-bruyers"
 REPO_NAME="svg2icon"
 BUILD_DIR="build"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -176,12 +176,12 @@ generate_release_notes() {
     release_notes+="## Installation"$'\n\n'
     release_notes+="### Quick Install (Unix/Linux/macOS)"$'\n'
     release_notes+='```bash'$'\n'
-    release_notes+='curl -sSL https://raw.githubusercontent.com/Julian-Bruyers/svg2icon/main/scripts/install.sh | bash'$'\n'
+    release_notes+='curl -sSL https://raw.githubusercontent.com/julian-bruyers/svg2icon/main/scripts/install.sh | bash'$'\n'
     release_notes+='```'$'\n\n'
     
     release_notes+="### Quick Install (Windows PowerShell)"$'\n'
     release_notes+='```powershell'$'\n'
-    release_notes+='iwr -useb https://raw.githubusercontent.com/Julian-Bruyers/svg2icon/main/scripts/install.ps1 | iex'$'\n'
+    release_notes+='iwr -useb https://raw.githubusercontent.com/julian-bruyers/svg2icon/main/scripts/install.ps1 | iex'$'\n'
     release_notes+='```'$'\n\n'
     
     release_notes+="### Manual Installation"$'\n'

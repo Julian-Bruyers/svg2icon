@@ -1,4 +1,4 @@
-module github.com/Julian-Bruyers/svg2icon
+module github.com/julian-bruyers/svg2icon
 
 go 1.24.5
 

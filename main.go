@@ -16,7 +16,7 @@
 //   - .icon extension or no extension: Creates both formats
 package main
 
-import "github.com/Julian-Bruyers/svg2icon/cmd/svg2icon"
+import "github.com/julian-bruyers/svg2icon/cmd/svg2icon"
 
 func main() {
 	svg2icon.Run()

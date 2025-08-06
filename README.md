@@ -1,7 +1,7 @@
 <!--  README badges  -->
-<a href="https://github.com/Julian-Bruyers/svg2icon/releases"><img src="https://img.shields.io/github/v/release/Julian-Bruyers/svg2icon?label=Latest&labelColor=2D3748&color=003087"></a>
-<a href="https://github.com/Julian-Bruyers/svg2icon/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Julian-Bruyers/svg2icon?&label=License&logo=opensourceinitiative&logoColor=ffffff&labelColor=2D3748&color=2D3748"></a>
-<a href="https://goreportcard.com/report/github.com/Julian-Bruyers/svg2icon"><img src="https://goreportcard.com/badge/github.com/Julian-Bruyers/svg2icon"></a>
+<a href="https://github.com/julian-bruyers/svg2icon/releases"><img src="https://img.shields.io/github/v/release/julian-bruyers/svg2icon?label=Latest&labelColor=2D3748&color=003087"></a>
+<a href="https://github.com/julian-bruyers/svg2icon/blob/main/LICENSE"><img src="https://img.shields.io/github/license/julian-bruyers/svg2icon?&label=License&logo=opensourceinitiative&logoColor=ffffff&labelColor=2D3748&color=2D3748"></a>
+<a href="https://goreportcard.com/report/github.com/julian-bruyers/svg2icon"><img src="https://goreportcard.com/badge/github.com/julian-bruyers/svg2icon"></a>
 <a href="#installation"><img src="https://img.shields.io/badge/Go-00ADD8?logo=go&logoColor=white&labelColor=2D3748&color=2D3748" align="right"></a>
 <a href="#platform-support"><img src="https://img.shields.io/badge/Linux-E95420?logo=linux&logoColor=white" align="right"></a>
 <a href="#platform-support"><img src="https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white" align="right"></a>
@@ -27,18 +27,18 @@ A fast and lightweight command-line tool for converting SVG files to platform-sp
 **Unix/Linux/macOS:**
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/Julian-Bruyers/svg2icon/main/scripts/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/julian-bruyers/svg2icon/main/scripts/install.sh | bash
 ```
 
 **Windows PowerShell:**
 
 ```powershell
-iwr -useb https://raw.githubusercontent.com/Julian-Bruyers/svg2icon/main/scripts/install.ps1 | iex
+iwr -useb https://raw.githubusercontent.com/julian-bruyers/svg2icon/main/scripts/install.ps1 | iex
 ```
 
 ### Manual Installation
 
-1. Download the appropriate binary from the [releases page](https://github.com/Julian-Bruyers/svg2icon/releases)
+1. Download the appropriate binary from the [releases page](https://github.com/julian-bruyers/svg2icon/releases)
 2. Rename it to `svg2icon` (or `svg2icon.exe` on Windows)
 3. Place it in your PATH
 
@@ -51,7 +51,7 @@ iwr -useb https://raw.githubusercontent.com/Julian-Bruyers/svg2icon/main/scripts
 **Clone and build:**
 
 ```bash
-git clone https://github.com/Julian-Bruyers/svg2icon.git
+git clone https://github.com/julian-bruyers/svg2icon.git
 cd svg2icon
 go build -o svg2icon .
 ```

@@ -1,7 +1,8 @@
 #!/bin/bash
-# svg2icon Uninstallation Script for Unix/Linux/macOS
-# Removes svg2icon binary and cleans up PATH entries
-# Usage: ./uninstall.sh or curl -sSL https://raw.githubusercontent.com/Julian-Bruyers/svg2icon/main/scripts/uninstall.sh | bash
+# svg2icon uninstaller script for Unix/Linux/macOS
+# Removes svg2icon binary from the system
+#
+# Usage: ./uninstall.sh or curl -sSL https://raw.githubusercontent.com/julian-bruyers/svg2icon/main/scripts/uninstall.sh | bash
 
 set -e
 
