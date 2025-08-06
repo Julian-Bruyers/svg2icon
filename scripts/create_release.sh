@@ -11,12 +11,20 @@ BUILD_DIR="build"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
-# Colors for output
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-BLUE='\033[0;34m'
-NC='\033[0m' # No Color
+# Colors for output (only if terminal supports colors)
+if [[ -t 1 ]] && command -v tput >/dev/null 2>&1 && tput colors >/dev/null 2>&1; then
+    RED='\033[0;31m'
+    GREEN='\033[0;32m'
+    YELLOW='\033[1;33m'
+    BLUE='\033[0;34m'
+    NC='\033[0m' # No Color
+else
+    RED=''
+    GREEN=''
+    YELLOW=''
+    BLUE=''
+    NC=''
+fi
 
 # Helper functions
 error() {
@@ -99,20 +107,31 @@ check_tag_exists() {
     fi
 }
 
-# Get version input from user
+# Get version input from user or command line
 get_version() {
-    local current_version=""
+    local version="$1"  # Accept version as parameter
     
-    # Try to get the latest tag as reference
-    if latest_tag=$(git describe --tags --abbrev=0 2>/dev/null); then
-        info "Latest tag: $latest_tag"
+    # If no version provided as argument, ask user
+    if [[ -z "$version" ]]; then
+        # Try to get the latest tag as reference
+        if latest_tag=$(git describe --tags --abbrev=0 2>/dev/null); then
+            info "Latest tag: $latest_tag"
+        else
+            info "No previous tags found"
+        fi
+        
+        echo
+        echo "Please enter the version for this release:"
+        echo "Format: Semantic versioning (MAJOR.MINOR.PATCH)"
+        echo "Examples:"
+        echo "  • 1.0.0        - First major release"
+        echo "  • v1.2.3       - Version with 'v' prefix"
+        echo "  • 2.0.0-beta.1 - Pre-release version"
+        echo "  • 1.1.0        - Minor update"
+        echo
+        echo -n "Version: "
+        read -r version
     fi
-    
-    echo
-    echo "Please enter the version for this release (semantic versioning):"
-    echo "Examples: 1.0.0, v1.2.3, 2.0.0-beta.1"
-    echo -n "Version: "
-    read -r version
     
     if [[ -z "$version" ]]; then
         error "Version cannot be empty"
@@ -132,7 +151,7 @@ generate_release_notes() {
     local release_notes=""
     
     if [[ -n "$latest_tag" ]]; then
-        info "Generating release notes from commits since $latest_tag..."
+        echo "Generating release notes from commits since $latest_tag..." >&2
         
         # Get commits since last tag
         local commits
@@ -145,10 +164,6 @@ generate_release_notes() {
             done <<< "$commits"
             release_notes+=$'\n'
         fi
-    else
-        info "No previous tags found, creating initial release notes..."
-        release_notes+="## Initial Release"$'\n\n'
-        release_notes+="First release of svg2icon - a tool for converting SVG files to ICO and ICNS icon formats."$'\n\n'
     fi
     
     # Add standard release notes
@@ -278,6 +293,7 @@ cleanup() {
 
 # Main release process
 main() {
+    local version="$1"  # Accept version as first parameter
     trap cleanup EXIT
     
     info "svg2icon Release Creation Script"
@@ -286,9 +302,13 @@ main() {
     # Check prerequisites
     check_prerequisites
     
-    # Get version from user
-    local version
-    version=$(get_version)
+    # Get version from user or command line parameter
+    version=$(get_version "$version")
+    
+    if [[ -z "$version" ]]; then
+        error "Failed to get valid version"
+    fi
+    
     info "Creating release for version: $version"
     
     # Get latest tag for release notes
